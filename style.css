@@ -127,3 +127,8 @@ h1{
   list-style: square;
 
 }
+@media all (max-width:420px){
+  nav ul {
+    flex-direction : colomn ;
+  }
+}
