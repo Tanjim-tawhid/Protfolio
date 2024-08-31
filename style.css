@@ -11,8 +11,7 @@ body {
   line-height: 1.6;
 }
 
-
-nav{
+nav {
   background: rgba(26, 26, 26, 0.8);
   backdrop-filter: blur(10px);
   padding: 1rem 2rem;
@@ -22,13 +21,19 @@ nav{
   z-index: 100;
   box-shadow: 0 0 20px rgba(0, 255, 128, 0.2);
 }
+
 nav ul {
   display: flex;
   justify-content: space-around;
   list-style: none;
   align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
+nav li {
+  margin: 0;
+}
 
 nav li a {
   color: #fff;
@@ -68,17 +73,19 @@ nav li a:hover::before {
   position: relative;
   text-align: center;
 }
+
 .photo-area::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(0, 255, 128, 0.1), rgba(0, 255, 128, 0.3));
-    z-index: 1;
-    mix-blend-mode: overlay;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 255, 128, 0.1), rgba(0, 255, 128, 0.3));
+  z-index: 1;
+  mix-blend-mode: overlay;
 }
+
 .photo-text {
   position: relative;
   z-index: 2;
@@ -95,13 +102,12 @@ nav li a:hover::before {
   text-shadow: 0 0 20px #39ff14, 0 0 30px #39ff14, 0 0 40px #39ff14;
 }
 
-/* Glowing Effect */
 @keyframes glow {
   from {
-      box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
   }
   to {
-      box-shadow: 0 0 60px rgba(57, 255, 20, 0.8);
+    box-shadow: 0 0 60px rgba(57, 255, 20, 0.8);
   }
 }
 
@@ -112,10 +118,10 @@ section {
   border-bottom: 1px solid #333;
   box-shadow: 0 0 20px rgba(0, 255, 128, 0.1);
   transition: all 0.3s ease-in-out;
- background-color: rgba(rgb(0, 229, 255), rgb(4, 203, 238), rgb(0, 162, 255), alpha);
+  background-color: rgba(0, 229, 255, 0.2);
 }
 
-h1{
+h1 {
   font-size: 2.5rem;
   color: #39ff14;
   text-shadow: 0 0 10px #39ff14;
@@ -125,11 +131,26 @@ h1{
 
 #Protfolio ul {
   list-style: square;
-
 }
-@media only screen and (max-width: 768px){
-  nav{
-    display : flex;
-    flex-direction: column;
+
+@media only screen and (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+  
+  nav li {
+    margin: 0.5rem 0;
+  }
+  
+  nav li a {
+    font-size: 1.5rem;
   }
 }
