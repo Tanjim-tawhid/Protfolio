@@ -127,9 +127,9 @@ h1{
   list-style: square;
 
 }
-@media all (max-width:420px){
-  nav ul {
-    display : flex ;
+@media only screen and (max-width: 768px){
+  nav{
+    display : flex;
     flex-direction: column;
   }
 }
