@@ -129,6 +129,7 @@ h1{
 }
 @media all (max-width:420px){
   nav ul {
-    flex-direction : colomns ;
+    display : flex ;
+    flex-direction: column;
   }
 }
