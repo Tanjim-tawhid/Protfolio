@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0d0d0d 25%, #1c1c1c 100%);
+  color: #fff;
+  line-height: 1.6;
+}
+
+
+nav{
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 0 20px rgba(0, 255, 128, 0.2);
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  align-items: center;
+}
+
+
+nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+nav li a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #39ff14;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+nav li a:hover {
+  color: #39ff14;
+}
+
+nav li a:hover::before {
+  visibility: visible;
+  width: 100%;
+}
+
+#Home {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("FB_IMG_17202585190850716.jpg") no-repeat center center/cover;
+  position: relative;
+  text-align: center;
+}
+.photo-area::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 255, 128, 0.1), rgba(0, 255, 128, 0.3));
+    z-index: 1;
+    mix-blend-mode: overlay;
+}
+.photo-text {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.6);
+  animation: glow 2s infinite alternate;
+}
+
+.photo-text p {
+  font-size: 3rem;
+  color: #39ff14;
+  text-shadow: 0 0 20px #39ff14, 0 0 30px #39ff14, 0 0 40px #39ff14;
+}
+
+/* Glowing Effect */
+@keyframes glow {
+  from {
+      box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+  }
+  to {
+      box-shadow: 0 0 60px rgba(57, 255, 20, 0.8);
+  }
+}
+
+section {
+  padding: 4rem 2rem;
+  margin-top: 60px; /* Offset for fixed navbar */
+  background: #0d0d0d;
+  border-bottom: 1px solid #333;
+  box-shadow: 0 0 20px rgba(0, 255, 128, 0.1);
+  transition: all 0.3s ease-in-out;
+ background-color: rgba(rgb(0, 229, 255), rgb(4, 203, 238), rgb(0, 162, 255), alpha);
+}
+
+h1{
+  font-size: 2.5rem;
+  color: #39ff14;
+  text-shadow: 0 0 10px #39ff14;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+#Protfolio ul {
+  list-style: square;
+
+}
