@@ -1,9 +1,9 @@
 
-var ctx = document.getElementById('myDoughnutChart').getContext('2d');  
+var ctx = document.getElementById('myDoughnutChart').getContext('2d');
 var myDoughnutChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ['HTML', 'CSS3', 'JavaScript',  'Tailwind Css', 'Others'],
+        labels: ['HTML', 'CSS3', 'JavaScript', 'Tailwind Css', 'Others'],
         datasets: [{
             label: 'Skill Set',
             data: [90, 80, 95, 15, 5],
@@ -30,14 +30,52 @@ var myDoughnutChart = new Chart(ctx, {
         plugins: {
             legend: {
                 labels: {
-                    color: 'white' 
+                    color: 'black'
                 }
             },
             tooltip: {
-                backgroundColor: 'rgba(0, 0, 0, 0.7)', 
-                titleColor: 'white', 
-                bodyColor: 'white' 
+                backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                titleColor: 'white',
+                bodyColor: 'white'
             }
         }
     }
+});
+//silder animation
+
+let slideIndex = 0;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+    let slides = document.querySelectorAll('.slide');
+
+    if (n >= slides.length) {
+        slideIndex = 0;
+    }
+
+    if (n < 0) {
+        slideIndex = slides.length - 1;
+    }
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slides[slideIndex].style.display = "block";
+}
+///responsive
+document.addEventListener('DOMContentLoaded', function () {
+    const nav = document.querySelector('nav');
+    const mobileMenu = document.createElement('div');
+    mobileMenu.classList.add('mobile-menu');
+    mobileMenu.innerHTML = '&#9776;'; // Hamburger menu icon
+    nav.appendChild(mobileMenu);
+
+    mobileMenu.addEventListener('click', function () {
+        nav.classList.toggle('active');
+    });
 });
